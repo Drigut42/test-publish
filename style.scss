@@ -1,0 +1,133 @@
+$primary-color: #0ea5e9;
+$secondary-color: #e11d48;
+$green-color: #15803d;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+// Header-------------------------------------------------------------
+
+header {
+  background-color: $primary-color;
+  color: white;
+  // header divs sind nebeneinander:
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //   Logo.........................
+  .header-left {
+    p {
+      font-size: 14px;
+    }
+  }
+  //   Navigation...................
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      //   zentieren durch p:
+      padding: 0;
+      li {
+        a {
+          text-decoration: none;
+          color: #fff;
+          font-weight: bold;
+
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+  //   Button...............................
+  .login-btn {
+    background-color: $secondary-color;
+    color: white;
+    padding: 0.5em 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    // Btn immer hover = background-color 10% darker
+    &:hover {
+      background-color: darken($color: $secondary-color, $amount: 10%);
+    }
+  }
+}
+
+// Main---------------------------------------------------------------------
+.main-section {
+  height: 70vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  p {
+    // font-size: 16px;
+    animation: text-ani 2s infinite alternate;
+  }
+  .register-btn {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 1.3em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      background-color: $secondary-color;
+      transform: scale(1.1);
+    }
+  }
+}
+@keyframes text-ani {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.secondary-section {
+  background-color: #4ade8051;
+  padding: 1rem;
+  margin-bottom: 60px;
+  .styled-list {
+    h2 {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+    }
+    li {
+      background-color: $green-color;
+      color: white;
+      padding: 0.7em;
+      border-radius: 5px;
+    }
+  }
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  //   width: 100%;
+  // oder
+  left: 0;
+  right: 0;
+
+  background-color: $primary-color;
+  color: #fff;
+  text-align: center;
+  padding: 0.5em;
+  border-top: 7px solid orange;
+}
